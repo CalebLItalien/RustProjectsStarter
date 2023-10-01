@@ -7,7 +7,7 @@ fn main() {
 
     let secret_number = rand::thread_rng().gen_range(1..=100);
 
-    println!("The secret number is: {secret_number}");
+    // println!("The secret number is: {secret_number}");
     loop {
         println!("Please input your guess.");
 
@@ -17,7 +17,7 @@ fn main() {
             .read_line(&mut guess) //  makes the reference guess mutable, . indicates called off of io::stdin()
             .expect("Failed to read line"); // . indicates it's called off of Result of read_line, which is either OK or error()
 
-        let guess: u32 = guess.trim().parse(){
+        let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => continue,
         };
