@@ -1,0 +1,4 @@
+packages: cargo feature that lets you build, test, and share crates
+crates: a tree of modules that produces a library or executable
+modules and use: let you control organization, scope, and privacy of paths
+paths: a way of naming an item, such as a struct, function, or module
