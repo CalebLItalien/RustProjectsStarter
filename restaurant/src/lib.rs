@@ -14,8 +14,8 @@ mod tests {
 }
 
 mod front_of_house { // defines module
-    mod hosting { //submodule
-        fn add_to_waitlist() {}
+    pub mod hosting { //submodule
+        pub fn add_to_waitlist() {}
 
         fn seat_at_table() {}
     }
@@ -27,4 +27,9 @@ mod front_of_house { // defines module
 
         fn take_payment() {}
     }
+}
+pub fn eat_at_restauarant() {
+    crate::front_of_house::hosting::add_to_waitlist(); //absolute path
+    front_of_house::hosting::add_to_waitlist(); //relative path
+
 }
