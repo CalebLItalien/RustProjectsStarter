@@ -1,4 +1,5 @@
 //use aggregator::{Summary, NewsArticle};
+use std::fmt::Display;
 
 fn main() {
     let newsArticle = NewsArticle {
@@ -61,3 +62,25 @@ fn returns_sumarizable() -> impl Summary {
     }
 } // can only return one type in this function, 
 //no switch cases for diff implementations of summary
+
+struct Pair<T>{
+    x: T,
+    y: T,
+}
+
+impl<T> Pair<T> {
+    fn new(x: T, y: T) -> Self {
+        Self {x, y}
+    }
+}
+
+impl<T: Display + PartialOrd> Pair<T> {
+    fn cmp_display(&self) {
+        if self.x >= self.y {
+            println!("abc");
+        }
+        else {
+            println!("abcd");
+        }
+    }
+}
