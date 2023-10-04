@@ -52,7 +52,9 @@ impl Worker {
             thread: Some(thread),
         }
     }
+
 }
+// come back and fix this later
 
 impl Drop for ThreadPool {
     fn drop(&mut self) {
